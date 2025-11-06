@@ -18,6 +18,7 @@ from src.utils.logger import get_logger, setup_logging
 
 # Import tools to register them with the MCP server
 import src.tools.search_reddit  # noqa: F401
+import src.tools.get_post_comments  # noqa: F401
 
 # Initialize logger (will be reconfigured in main())
 logger = get_logger(__name__)
