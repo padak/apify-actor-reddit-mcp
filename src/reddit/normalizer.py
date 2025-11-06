@@ -413,3 +413,26 @@ def normalize_subreddit(subreddit: praw.models.Subreddit) -> Dict[str, Any]:
         >>> normalized = normalize_subreddit(subreddit)
     """
     return ResponseNormalizer.normalize_subreddit(subreddit)
+
+
+def normalize_post_batch(
+    submissions: list[praw.models.Submission]
+) -> list[Dict[str, Any]]:
+    """
+    Normalize a batch of posts.
+
+    Convenience function that calls ResponseNormalizer.normalize_post_batch().
+
+    Args:
+        submissions: List of PRAW Submission objects
+
+    Returns:
+        List of normalized post dictionaries
+
+    Example:
+        >>> from src.reddit.normalizer import normalize_post_batch
+        >>> reddit = get_reddit_client()
+        >>> posts = list(reddit.subreddit("python").hot(limit=10))
+        >>> normalized = normalize_post_batch(posts)
+    """
+    return ResponseNormalizer.normalize_post_batch(submissions)

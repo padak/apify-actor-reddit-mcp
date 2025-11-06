@@ -36,6 +36,7 @@ from src.reddit.normalizer import (
     normalize_comment,
     normalize_user,
     normalize_subreddit,
+    normalize_post_batch,
 )
 from src.reddit.rate_limiter import TokenBucketRateLimiter
 
@@ -60,6 +61,7 @@ __all__ = [
     "normalize_comment",
     "normalize_user",
     "normalize_subreddit",
+    "normalize_post_batch",
     # Rate limiting
     "TokenBucketRateLimiter",
 ]

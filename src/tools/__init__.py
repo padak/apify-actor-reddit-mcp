@@ -4,6 +4,10 @@ from src.tools.get_subreddit_posts import (
     GetSubredditPostsInput,
     get_subreddit_posts,
 )
+from src.tools.get_trending_topics import (
+    GetTrendingTopicsInput,
+    get_trending_topics,
+)
 from src.tools.search_reddit import SearchRedditInput, search_reddit
 
 __all__ = [
@@ -13,4 +17,7 @@ __all__ = [
     # Subreddit posts tool
     "get_subreddit_posts",
     "GetSubredditPostsInput",
+    # Trending topics tool
+    "get_trending_topics",
+    "GetTrendingTopicsInput",
 ]
