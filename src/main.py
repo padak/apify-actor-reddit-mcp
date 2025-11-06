@@ -13,8 +13,11 @@ import sys
 
 from apify import Actor
 
-from src.server import create_mcp_server
+from src.server import mcp
 from src.utils.logger import get_logger, setup_logging
+
+# Import tools to register them with the MCP server
+import src.tools.search_reddit  # noqa: F401
 
 # Initialize logger (will be reconfigured in main())
 logger = get_logger(__name__)
@@ -45,13 +48,11 @@ async def main() -> None:
     )
 
     async with Actor:
-        # Create MCP server
-        server = create_mcp_server()
-
+        # MCP server already created as singleton in src.server
         logger.info(
-            "mcp_server_created",
-            name=server.name,
-            version=server.version,
+            "mcp_server_ready",
+            name=mcp.name,
+            version=mcp.version,
         )
 
         # TODO MVP-002: Initialize Redis cache
@@ -89,7 +90,7 @@ async def main() -> None:
 
         try:
             # Run server (blocks until shutdown)
-            await server.run(transport=transport)
+            await mcp.run(transport=transport)
         except Exception as e:
             logger.error(
                 "server_error",

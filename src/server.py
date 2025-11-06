@@ -241,3 +241,7 @@ def register_health_check(mcp: FastMCP) -> None:
         logger.debug("health_check_performed", status=overall_status)
 
         return response.dict()
+
+
+# Create global MCP server instance (singleton)
+mcp = create_mcp_server()
