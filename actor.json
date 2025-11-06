@@ -4,6 +4,7 @@
   "title": "Reddit MCP Server",
   "version": "0.1.0",
   "description": "Enterprise-grade MCP server for Reddit integration. Access Reddit's 73M daily active users and 100K+ communities through a standardized Model Context Protocol interface with intelligent caching and rate limiting.",
+  "license": "MIT",
   "categories": ["AI", "DEVELOPMENT", "SOCIAL_MEDIA"],
   "usesStandbyMode": true,
   "webServerMcpPath": "/mcp",
