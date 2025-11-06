@@ -32,6 +32,7 @@ ENV/
 
 # Apify
 .apify/
+.actor/
 apify_storage/
 storage/
 
