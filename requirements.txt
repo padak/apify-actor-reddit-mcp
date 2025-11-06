@@ -1,0 +1,23 @@
+# Core Framework
+fastmcp>=1.0.0
+
+# Reddit Integration
+praw>=7.7.0
+
+# Caching
+redis[asyncio]>=5.0.0
+
+# Data Validation
+pydantic>=2.0.0
+
+# Apify Platform
+apify>=1.6.0
+
+# HTTP Server
+uvicorn>=0.25.0
+
+# Logging
+structlog>=23.0.0
+
+# Utilities
+python-dotenv>=1.0.0

@@ -1,0 +1,33 @@
+{
+  "actorSpecification": 1,
+  "name": "reddit-mcp-server",
+  "title": "Reddit MCP Server",
+  "version": "0.1.0",
+  "description": "Enterprise-grade MCP server for Reddit integration. Access Reddit's 73M daily active users and 100K+ communities through a standardized Model Context Protocol interface with intelligent caching and rate limiting.",
+  "categories": ["AI", "DEVELOPMENT", "SOCIAL_MEDIA"],
+  "usesStandbyMode": true,
+  "webServerMcpPath": "/mcp",
+  "environmentVariables": {
+    "REDDIT_CLIENT_ID": {
+      "type": "secret",
+      "required": true,
+      "description": "Reddit API client ID (obtain from https://www.reddit.com/prefs/apps)"
+    },
+    "REDDIT_CLIENT_SECRET": {
+      "type": "secret",
+      "required": true,
+      "description": "Reddit API client secret"
+    },
+    "REDIS_URL": {
+      "type": "string",
+      "required": true,
+      "description": "Redis connection URL (e.g., redis://localhost:6379)"
+    },
+    "LOG_LEVEL": {
+      "type": "string",
+      "required": false,
+      "default": "INFO",
+      "description": "Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)"
+    }
+  }
+}
